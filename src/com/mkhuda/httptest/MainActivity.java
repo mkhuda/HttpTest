@@ -43,9 +43,13 @@ public class MainActivity extends ActionBarActivity {
 		if (isConnected()) {
 			textKoneksi.setBackgroundColor(0xFF00CC00);
 			textKoneksi.setText("You are connected");
+			Toast.makeText(getBaseContext(), "You are connected to the Internet", Toast.LENGTH_LONG)
+			.show();
 		} else {
 			textKoneksi.setBackgroundColor(0x5b7ca500);
 			textKoneksi.setText("You are NOT connected");
+			Toast.makeText(getBaseContext(), "You are NOT connected to Internet", Toast.LENGTH_LONG)
+			.show();
 		}
 
 		new HttpAsyncTask().execute("http://androgan.com/test.php");
@@ -112,7 +116,7 @@ public class MainActivity extends ActionBarActivity {
 		// onPostExecute displays the results of the AsyncTask.
 		@Override
 		protected void onPostExecute(String result) {
-			Toast.makeText(getBaseContext(), "Received!", Toast.LENGTH_LONG)
+			Toast.makeText(getBaseContext(), "Text Successfully Received from HTTP", Toast.LENGTH_LONG)
 					.show();
 			textJohn.setText(result);
 		}
