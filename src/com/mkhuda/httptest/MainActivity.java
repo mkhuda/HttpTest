@@ -45,6 +45,7 @@ public class MainActivity extends ActionBarActivity {
 			textKoneksi.setText("You are connected");
         }
         else{
+        	textKoneksi.setBackgroundColor(0x5b7ca500);
         	textKoneksi.setText("You are NOT connected");
         }
 		
