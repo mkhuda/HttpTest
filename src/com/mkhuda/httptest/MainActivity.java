@@ -45,6 +45,8 @@ public class MainActivity extends ActionBarActivity {
 			textKoneksi.setText("You are connected");
 			Toast.makeText(getBaseContext(), "You are connected to the Internet", Toast.LENGTH_LONG)
 			.show();
+			Toast.makeText(getBaseContext(), "Text Successfully Received from HTTP", Toast.LENGTH_LONG)
+			.show();
 		} else {
 			textKoneksi.setBackgroundColor(0x5b7ca500);
 			textKoneksi.setText("You are NOT connected");
@@ -116,8 +118,7 @@ public class MainActivity extends ActionBarActivity {
 		// onPostExecute displays the results of the AsyncTask.
 		@Override
 		protected void onPostExecute(String result) {
-			Toast.makeText(getBaseContext(), "Text Successfully Received from HTTP", Toast.LENGTH_LONG)
-					.show();
+			
 			textJohn.setText(result);
 		}
 	}
